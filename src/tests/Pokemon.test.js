@@ -4,15 +4,11 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
-// A imagem do pokemon possui o alt <name> sprite
-
 test('Verifica se a imagem do pokemon possui o alt <name> sprite', () => {
   renderWithRouter(<App />);
   const imgPokemonName = screen.getByRole('img', { name: /pikachu sprite/i });
   expect(imgPokemonName.alt).toBe('Pikachu sprite');
 });
-// PAREI AQUI
-
 test('Verifica se a imagem do pokemon possui o src correto', () => {
   renderWithRouter(<App />);
   const imgPokemon = screen.getByRole('img', { src: 'https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png' });
